@@ -1,0 +1,384 @@
+// App.js
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+
+import Login from "./Login/Login";
+
+import Register from "./Register/Register";
+import Market from "./Market/Market";
+import GoldETF from "./GoldETF/GoldETF";
+import Stocktable from "./StockList/StockList";
+import ProfitLossTable from "./ProfitLossTable/ProfitLossTable";
+import BalanceSheet from "./BalanceSheet/BalanceSheet";
+import Header from "./header/header";
+import Overview from "./StockOverview/Overview";
+
+import Smallcap from "./Smallcappages/Smallcapstock/Smallcapstock";
+import Midcap from "./Midcappages/Midcapstock/Midcapstock";
+import Largecap from "./Largecappages/Largecapstock/Largecapstock";
+import NiftyStocks from "./Nifty50stock/Nifty50stock";
+import Highstock from "./Highgrowthpages/Highstock/Highstock";
+import Beststock from "./Beststockspages/Beststock/Beststock";
+
+import Portfolio from "./Portfoilo/Portfoliomanager/Portfoliomanager";
+import NetWorthStocksDashboard from "./Portfoilo/NetWorthStocksDashboard/NetWorthStocksDashboard";
+import PortfolioAccountStock from "./Portfoilo/PortfolioAccountStock/PortfolioAccountStock";
+import AccountStockfundamental from "./Portfoilo/AccountStockfundamental/AccountStockfundamental";
+import AccountStockalert from "./Portfoilo/AccountStockalerts/AccountStockalerts";
+import AccountStockreturn from "./Portfoilo/AccountStockreturn/AccountStockreturn";
+import Portfoliodonut from "./Portfoilo/Portfoliodonut/Portfoliodonut";
+import OverviewPortfolioManager from "./Portfoilo/OverviewPortfoliograph/OverviewPortfoliograph";
+import PortfolioStocksector from "./Portfoilo/PortfolioStocksector/PortfolioStocksector";
+import PortfolioStockmcap from "./Portfoilo/PortfolioStockmcap/PortfolioStockmcap";
+import AddTransactionstock from "./Portfoilo/AddTransactionstock/AddTransactionstock";
+import Deletepopupstock from "./Portfoilo/Deletepopupstock/Deletepopupstock";
+
+import UpdateTransaction from "./Portfoilo/UpdateTransactionstock/UpdateTransactionstock";
+import Mutualnone from "./Portfoilo/Mutualnone/Mutualnone";
+import Mutualtypefund from "./Portfoilo/Mutualtypefund/Mutualtypefund";
+import Mutualsector from "./Portfoilo/Mutualsector/Mutualsector";
+import MutualAccountStock from "./Portfoilo/Mutualtransaction/Mutualtransaction";
+import OverviewMutual from "./Portfoilo/Mutualoverview/Mutualoverview";
+import Accountmutualperformance from "./Portfoilo/Mutualperformance/Mutualperformance";
+
+import StockWatchlist from "./Portfoilo/StockWatchlist/StockWatchlistnone";
+
+
+import SubscriptionPlans from "./Subscription/PricingTablehalfyear/PricingTablehalfyear";
+import SubscriptionannualPlans from "./Subscription/Subscriptionannualplan/Subscriptionannualplan";
+
+import TopRatedFunds from "./MutualFund/TopRatedFunds/TopRatedFunds";
+import TopRatedFundsdirect from "./MutualFund/TopRatedFundsdirect/TopRatedFundsdirect";
+import GoldWatchportall from "./Portfoilo/Goldwatchlistall/Goldwatchlistall";
+import Portfoliogoldaccount from "./Portfoilo/Portfoliogoldaccount/Portfoliogoldaccount";
+
+
+import StockWatchportall from "./Portfoilo/StockWatchlistall/StockWatchlistall";
+import StockWatchsectormcap from "./Portfoilo/StockWatchlistmcap/StockWatchlistmcap";
+import StockWatchsectorlist from "./Portfoilo/StockWatchlistsector/StockWatchlistsector";
+import MutualWatchlist from "./Portfoilo/Mutualfundwatchlistportfolio/Mutualfundwatchlistportfolio";
+import MutualWatchtypefundlist from "./Portfoilo/Mutualfundwtchlisttypefund/Mutualfundwtchlisttypefund";
+import MutualWatchsectorlist from "./Portfoilo/Mutualsectorportwatchlist/Mutualsectorportwatchlist";
+import MutualWatchportall from "./Portfoilo/Mutualwatchportall/Mutualwatchportall";
+
+import Mutualfund from "./MutualFund/Mutualfund";
+import Bestsmallcapregular from "./MutualFund/Bestsmallcapregular/Bestsmallcapregular";
+import Bestsmallcapdirect from "./MutualFund/Bestsmallcapdirect/Bestsmallcapdirect";
+import MutualFundsSipCalculator from "./MutualFund/MutualFundsSipCalculator/MutualFundsSipCalculator";
+
+import RiskoMeter from "./MutualFund/RiskoMutualDashboard/RiskoMutualDashboard";
+import Flexregular from "./MutualFund/fundDataregularflex/fundDataregularflex";
+import Flexdirect from "./MutualFund/Flexdirect/Flexdirect";
+import Fundscreenerregular from "./MutualFund/Fundscreenerregular/Fundscreenerregular";
+import Fundscreenerdirect from "./MutualFund/Fundscreenerdirect/Fundscreenerdirect";
+import Bestgrowthregular from "./MutualFund/Bestgrowthregular/Bestgrowthregular";
+import Etfregular from "./MutualFund/Etfregular/Etfregular";
+import Etfdirect from "./MutualFund/Etfdirect/Etfdirect";
+import Bestgrowthdirect from "./MutualFund/Bestgrowthdirect/Bestgrowthdirect";
+import StockNewsComponent from "./Learn&insight/StockNewsComponent/StockNewsComponent";
+
+import ScreenerStockList from "./Stocks/ScreenerStockList/ScreenerStockList";
+import ScreenerStockvaluation from "./Stocks/Stockvaluation/Stockvaluation";
+import ScreenerStockincome from "./Stocks/Stockincome/Stockincome";
+
+import EarningsInsightLearn from './Learn&insight/Quaterlyearning/EarningsInsightLearn/EarningsInsightLearn';
+import BlogsComponent from "./Learn&insight/Bolgs/Blogscomponent/Blogscomponent";
+import BlogFilter from "./Learn&insight/Bolgs/Blogsfilter/Blogsfilter";
+import Bloginvestment from "./Learn&insight/Bolgs/Blogsinvestment/Blogsinvestment";
+import Blogpmscard from "./Learn&insight/Bolgs/Pmsblogcard/Pmsblogcard";
+import Learncard from "./Learn&insight/Learnall/Learncard/Learncard";
+import Learncardaftersignup from "./Learn&insight/Learnall/Learncardaftersignup/Learncardaftersignup";
+import LearnCourseDetails from "./Learn&insight/Learnall/Learncoursedetail/Learncoursedetail";
+import StocknewsAdanigroup from "./Learn&insight/StocknewsAdanigroup/StocknewsAdanigroup";
+import StockNewsCard from "./Learn&insight/StockNewsCard/StockNewsCard";
+import ModulecourseDetails from "./Learn&insight/Learnall/Modulelearncourse/Modulelearncourse";
+import IpoDetailsubscribe from "./Learn&insight/Ipo/IpoDetailsubscribe/IpoDetailsubscribe";
+import IpoDetails from "./Learn&insight/Ipo/IpoDetails/IpoDetails";
+import IpoComponent from "./Learn&insight/Ipo/IpoComponent/IpoComponent";
+import UnlockscreenerStockList from "./Stocks/unlockscreenerstocklist/unlockscreenerstocklist";
+import Nifty50screenerStockList from "./Stocks/Niftystock50/Niftystock50table";
+import Quaterlygraphtop from "./Learn&insight/Quaterlyearning/Quaterlygraphtop/Quaterlygraphtop";
+import QuaterelyOverview from "./Learn&insight/Quaterlyearning/Quaterlyearningoverview/Quaterlyearningoverview";
+import QuaterlynewsList from "./Learn&insight/Quaterlyearning/Quaterlynews/Quaterlynews";
+import QuarterlyEarningdetailreport from "./Learn&insight/Quaterlyearning/Quaterlyearningdetailreport/Quaterlyearningdetailreport";
+import QuarterlyEarningdetailincome from "./Learn&insight/Quaterlyearning/Quaterlyearningincome/Quaterlyearningincome";
+import Quarterlybalancesheet from "./Learn&insight/Quaterlyearning/Quaterlyearnbalancesheet/Quaterlyearnbalancesheet";
+import QuarterlyCashflow from "./Learn&insight/Quaterlyearning/Quaterlycashflow/Quaterlycashflow";
+import Quarterlyratio from "./Learn&insight/Quaterlyearning/Quaterlyratio/Quaterlyratio";
+import Earninginsightheader from "./Learn&insight/Quaterlyearning/Earninginsightdetailheader/Earninginsightdetailheader";
+
+import Nifty50all from "./Stocks/Nifty50all";
+import Nifty50screenerStockunlockList from "./Stocks/Nifty50screenerStockListunlock/Nifty50screenerStockListunlock";
+import SectorWeightageTableniffty50 from "./Stocks/SectorWeightageTableniftty50/SectorWeightageTableniftty50";
+
+import FooterForAllPage from "./FooterForAllPage/FooterForAllPage";
+import ProfilePage from "./myprofile/ProfilePage/ProfilePage";
+
+import SettingsDashboard from "./sidebardash/SettingDashPanel/SettingDashPanel";
+import Dashboardchartmain from './Homepagenew/Dashboardgraph/Dashboardgraph';
+import Stockindexall from "./Homepagenew/Stockindexallpage/Stockindexallpage";
+import Calenderchartmain from "./Homepagenew/Stockcalendergraph/Stockcalendergraph";
+import Homestockanalyst from "./Homepagenew/Homestockanalyst/Homestockanalyst";
+import Stockanalystall from "./Homepagenew/Homeanalystall/Homeanalystall";
+import BestStockvaluation from "./Beststockspages/Beststockvaluation/Beststockvaluation";
+import BestStockIncomeStatement from "./Beststockspages/BestStockIncomeStatement/BestStockIncomeStatement";
+import Highstockvaluation from "./Highgrowthpages/Highstockvaluation/Highstockvaluation";
+import HighStockIncomeStatement from "./Highgrowthpages/highgrowthStockIncomeStatement/highgrowthStockIncomeStatement";
+import Netify100 from "./Nifty100pages/NiftyStocksTable/NiftyStocksTable";
+import Netify100valuation from "./Nifty100pages/Netify100valuation/Netify100valuation";
+import Netify100IncomeStatement from "./Nifty100pages/Netify100IncomeStatement/Netify100IncomeStatement";
+import Smallcapvaluation from "./Smallcappages/Smallcapvaluation/Smallcapvaluation";
+import SmallcapIncomeStatement from "./Smallcappages/SmallcapIncomeStatement/SmallcapIncomeStatement";
+import Midcapvaluation from "./Midcappages/Midcapvaluation/Midcapvaluation";
+import MidcapIncomeStatement from "./Midcappages/MidcapIncomeStatement/MidcapIncomeStatement";
+import Largecapvaluation from "./Largecappages/Largecapvaluation/Largecapvaluation";
+import LargecapIncomeStatement from "./Largecappages/LargecapIncomeStatement/LargecapIncomeStatement";
+import BillingSubscriptionPages from "./myprofile/BillingSubscriptionPages/BillingSubscriptionPages";
+import BillingDetailsPage from "./myprofile/BillingDetailsPage/BillingDetailsPage";
+import PaypalProfilePage from "./myprofile/PaypalProfilePage/PaypalProfilePage";
+import UPIProfilePage from "./myprofile/UPIProfilePage/UPIProfilePage";
+import ScanPayProfilePage from "./myprofile/scanAndPayProfilePage/scanAndPayProfilePage";
+import BillingDetailsPageannually from "./myprofile/BillingDetailsPageannually/BillingDetailsPageannually";
+import MyReferalPage from "./myprofile/MyReferalPage/MyReferalPage";
+import ReferMoreProfilePages from "./myprofile/ReferMoreProfilePages/ReferMoreProfilePages";
+import EarningCalculatorProfilePage from "./myprofile/EarningCalculatorProfilePage/EarningCalculatorProfilePage";
+import ReffeerralProfilePageSSS from "./myprofile/ReffeerralProfilePageSSS/ReffeerralProfilePageSSS";
+import FAQS from "./FAQS/FAQS";
+
+import SessionHistory from "./myprofile/SessionHistory/SessionHistory";
+import AccountSettings from "./myprofile/AccountSettings/AccountSettings";
+import OrderTable from "./myprofile/OrderTable/OrderTable";
+import Managealert from "./myprofile/Managealert/Managealert";
+import ContactFormmanagealert from "./myprofile/ContactFormmanagealert/ContactFormmanagealert";
+import EditProfile from "./myprofile/EditProfile/EditProfile";
+import UserDetailsupdate from "./myprofile/Userupdatedpage/Userupdatedpage";
+import RiskAnalysisDashboard from "./myprofile/Riskanalysis/RiskAnalysisDashboard/RiskAnalysisDashboard";
+import HalfyearlySubscriptionPages from "./Subscription/halfyearlySubscriptionPages/halfyearlySubscriptionPages";
+import HalfyearlyPaypalProfilePage from "./Subscription/HalfyearlypaypalSubscriptionPages/HalfyearlypaypalSubscriptionPages";
+import HalfyearlyUPIPage from "./Subscription/HalfyearlyupiProfilePage/HalfyearlyupiProfilePage";
+import HalfyearlyScanPage from "./Subscription/HalfyearlyScanPage/HalfyearlyScanPage";
+import PremiumSubscriptionPages from "./Subscription/PremiumSubscriptionPages/PremiumSubscriptionPages";
+import PremiumPaypalProfilePage from "./Subscription/PremiumpaypalPages/PremiumpaypalPages";
+import PremiumUPIPage from "./Subscription/PremiumupiProfilePage/PremiumupiProfilePage";
+import PremiumScanPage from "./Subscription/PremiumScanPage/PremiumScanPage";
+import AnnuallySubscriptionPages from "./Subscription/AnnuallySubscriptionPages/AnnuallySubscriptionPages";
+import AnnuallyPaypalProfilePage from "./Subscription/AnnuallyPaypalProfilePage/AnnuallyPaypalProfilePage";
+import AnnuallyUPIPage from "./Subscription/AnnuallyUPIPage/AnnuallyUPIPage";
+import AnnuallyScanPage from "./Subscription/AnnuallyScanPage/AnnuallyScanPage";
+import AnnuallyPremiumSubscriptionPages from "./Subscription/AnnuallyPremiumSubscriptionPages/AnnuallyPremiumSubscriptionPages";
+import AnnuallyPremiumPaypalProfilePage from "./Subscription/AnnuallyPremiumPaypalProfilePage/AnnuallyPremiumPaypalProfilePage";
+import AnnuallyPremiumUPIPage from "./Subscription/AnnuallyPremiumUPIPage/AnnuallyPremiumUPIPage";
+import AnnuallyPremiumScanPage from "./Subscription/AnnuallyPremiumScanPage/AnnuallyPremiumScanPage";
+
+import Accountsipallpage from "./Account/Accountsipallpage";
+import StocksSmartSIPPS from "./StocksSmartSIPPS/StocksSmartSIPPS";
+import ProfileRiskReportInvestment from "./myprofile/Riskanalysis/InvestmentGuide/InvestmentGuide";
+import ProfileScreenRiskReport from "./myprofile/ProfileScreenRiskReportDashboard/ProfileScreenRiskReportDashboard";
+import SmartSIPPS from "./StocksSmartSIPPS/StocksSmartSIPPS";
+
+
+
+
+
+
+
+
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/market" element={<Market/>} />
+      <Route path="/gold" element={<GoldETF/>} />
+      <Route path="/stock" element={<Stocktable/>} />
+      <Route path="/header" element={<Header/>} />
+      <Route path="/profitloss" element={<ProfitLossTable/>} />
+      <Route path="/balance-sheet" element={<BalanceSheet/>} />
+      <Route path="/register" element={<Register/>} />
+      <Route path="/stockhandle" element={<Overview/>} />
+      <Route path="/nifty" element={<Netify100/>} />
+      <Route path="/smallcap" element={<Smallcap/>} />
+      <Route path="/midcap" element={<Midcap/>} />
+      <Route path="/largecap" element={<Largecap/>} />
+      <Route path="/niftystock" element={<NiftyStocks/>} />
+      <Route path="/highgrowth" element={<Highstock/>} />
+      <Route path="/beststock" element={<Beststock/>} />
+      <Route path="/portfolio" element={<Portfolio/>} />
+      <Route path="/portfoliostock" element={<NetWorthStocksDashboard/>} />
+      <Route path="/portfoliodonut" element={<Portfoliodonut/>} />
+     <Route path="/portfoliostockaccount" element={<PortfolioAccountStock/>} />
+      <Route path="/accountfund" element={<AccountStockfundamental/>} />
+      <Route path="/accountalert" element={<AccountStockalert/>} />
+      <Route path="/accountreturn" element={<AccountStockreturn/>} />
+      <Route path="/overview" element={<OverviewPortfolioManager/>} />
+      <Route path="/stocksector" element={<PortfolioStocksector/>} />
+      <Route path="/stockmcap" element={<PortfolioStockmcap/>} />
+      <Route path="/stockadd" element={<AddTransactionstock/>} />
+      <Route path="/stockupdate" element={<UpdateTransaction/>} />
+      <Route path="/stockdelete" element={<Deletepopupstock/>} />
+      <Route path="/mutualsector" element={<Mutualsector/>} />
+      <Route path="/mutualnone" element={<Mutualnone/>} />
+      <Route path="/mutualtype" element={<Mutualtypefund/>} />
+      <Route path="/mutualaccount" element={<MutualAccountStock/>} />
+      <Route path="/mutualoverview" element={<OverviewMutual/>} />
+      <Route path="/accountperformance" element={<Accountmutualperformance/>} />
+      <Route path="/stockwatchlist" element={<StockWatchlist/>} />
+      <Route path="/stockwatchlistsector" element={<StockWatchsectorlist/>} />
+      <Route path="/stockwatchlistmcap" element={<StockWatchsectormcap/>} />
+      <Route path="/stockwatchlistall" element={<StockWatchportall/>} />
+      <Route path="/pricehalf" element={<SubscriptionPlans/>} />
+      <Route path="/annualplan" element={<SubscriptionannualPlans/>} />
+      <Route path="/mutualfund" element={<TopRatedFunds/>} />
+      <Route path="/mutualfunddirect" element={<TopRatedFundsdirect/>} />
+      <Route path="/goldWatchlistall" element={<GoldWatchportall/>} />
+      <Route path="/portfoliogoldtoppage" element={<Portfoliogoldaccount />} />
+     
+      <Route path="/mutualwatchlist" element={<MutualWatchlist/>} />
+      <Route path="/mutualwatchlisttype" element={<MutualWatchtypefundlist/>} />
+      <Route path="/mutualwatchlistsector" element={<MutualWatchsectorlist/>} />
+      <Route path="/mutualwatchlistall" element={<MutualWatchportall/>} />
+     
+      <Route path="/mutualfundgrowth" element={<Mutualfund/> }/>
+      <Route path="/bestsmallcapregular"element={<Bestsmallcapregular/> }/>
+      <Route path="/bestsmallcapdirect"element={<Bestsmallcapdirect/> }/>
+      <Route path="/sip"element={<MutualFundsSipCalculator/> }/>
+      <Route path="/risk"element={<RiskoMeter/> }/>
+      <Route path="/flexregular"element={<Flexregular/> }/>
+      <Route path="/flexdirect"element={<Flexdirect/> }/>
+      <Route path="/fundscreenerregular"element={<Fundscreenerregular/> }/>
+      <Route path="/fundscreenerdirect"element={<Fundscreenerdirect/> }/>
+      <Route path="/Bestgrowthregular"element={<Bestgrowthregular/> }/>
+      <Route path="/Bestgrowthdirect"element={<Bestgrowthdirect/> }/>
+      
+      <Route path="/etfregular"element={<Etfregular/> }/>
+      <Route path="/etfdirect"element={<Etfdirect/> }/>
+      <Route path="/stockNewsComponent"element={<StockNewsComponent/> }/>
+      <Route path="/stockScreenerlist"element={<ScreenerStockList/> }/>
+      <Route path="/ScreenerStockvaluation"element={<ScreenerStockvaluation/> }/>
+      <Route path="/IncomeStatement"element={<ScreenerStockincome/> }/>
+   
+      <Route path="/earningsInsightLearn"element={<EarningsInsightLearn/> }/>
+      <Route path="/blogsComponent" element={<BlogsComponent/>} />
+      <Route path="/blogFilter" element={<BlogFilter/>}/> 
+      <Route path="/bloginvestment/:id" element={<Bloginvestment/>}/> 
+      <Route path="/blogpmscard/:id" element={<Blogpmscard/>}/>
+      <Route path="/learncard" element={< Learncard/>}/>
+      <Route path="/learncardaftersignup" element={<Learncardaftersignup/>}/>
+      <Route path="/learnCourseDetails" element={<LearnCourseDetails/>}/>
+      <Route path="/stockNewsComponent" element={<StockNewsComponent/>} />
+      <Route path="/stocknewsAdanigroup/:id" element={<StocknewsAdanigroup/>} />
+      <Route path="/stockNewsCard/:id" element={<StockNewsCard/>} />
+      <Route path="/modulecourseDetails" element={<ModulecourseDetails/>}/>
+      <Route path="/ipoComponent" element={<IpoComponent/>}/>
+      <Route path="/ipoDetails/:id" element={<IpoDetails/>}/>
+      <Route path="/ipoDetailsubscribe" element={<IpoDetailsubscribe/>}/>
+      <Route path="/unlockstockscreener" element={<UnlockscreenerStockList/>}/>
+      <Route path="/nifty50screenerStockList" element={<Nifty50screenerStockList/>}/>
+      
+      <Route path="/earninginsightheader" element={<Earninginsightheader/>}/>
+      <Route path="/quaterlygraphtop" element={<Quaterlygraphtop/>}/>
+      <Route path="/earningsInsightLearn" element={<EarningsInsightLearn/>}/> 
+      <Route path="/quaterelyOverview" element={<QuaterelyOverview/>}/>
+      <Route path="/quaterlynewsList" element={<QuaterlynewsList/>}/>
+      <Route path="/qquarterlyEarningsReport" element={<QuarterlyEarningdetailreport/>}/>
+      <Route path="/quarterlyEarningdetailincome" element={<QuarterlyEarningdetailincome/>}/>
+      <Route path="/quarterlybalancesheet" element={<Quarterlybalancesheet/>}/>
+      <Route path="/quarterlyCashflow" element={<QuarterlyCashflow/>}/>
+      <Route path="/quarterlyratio" element={<Quarterlyratio/>}/>
+      <Route path="/sectorWeightageTableniffty50" element={<SectorWeightageTableniffty50/>}/>
+      <Route path="/nifty50screenerStockunlockList" element={<Nifty50screenerStockunlockList/>}/>
+      <Route path="/nifty50pageall" element={<Nifty50all/>}/>
+
+     
+      <Route path="/footerForAllPage" element={<FooterForAllPage/>}/>
+      <Route path="/profilePage" element={<ProfilePage/>}/>
+      <Route path="/settingDashPanel" element={<SettingsDashboard/>}/>
+      <Route path="/home" element={<Dashboardchartmain/>}/>
+      <Route path="/stockindexall" element={<Stockindexall/>}/>
+      <Route path="/calenderchartmain" element={<Calenderchartmain/>}/>
+      <Route path="/homestockanalyst" element={<Homestockanalyst/>}/>
+      <Route path="/stockanalystall" element={<Stockanalystall/>}/>
+      <Route path="/bestStockvaluation" element={<BestStockvaluation/>}/>
+      <Route path="/bestStockIncomeStatement" element={<BestStockIncomeStatement/>}/>
+      <Route path="/highstockvaluation" element={<Highstockvaluation/>}/>
+      <Route path="/highgrowthStockIncomeStatement" element={<HighStockIncomeStatement/>}/>
+      <Route path="/netify100valuation" element={<Netify100valuation/>}/>
+      <Route path="/netify100IncomeStatement" element={<Netify100IncomeStatement/>}/>
+      <Route path="/smallcapvaluation" element={<Smallcapvaluation/>}/>
+      <Route path="/smallcapIncomeStatement" element={<SmallcapIncomeStatement/>}/>
+      <Route path="/midcapvaluation" element={<Midcapvaluation/>}/>
+      <Route path="/midcapIncomeStatement" element={<MidcapIncomeStatement/>}/>
+      <Route path="/largecapvaluation" element={<Largecapvaluation/>}/>
+      <Route path="/largecapIncomeStatement" element={<LargecapIncomeStatement/>}/>
+      <Route path="/billingSubscriptionPages" element={<BillingSubscriptionPages/>}/>
+      <Route path="/billingDetailsPage" element={<BillingDetailsPage/>}/>
+      <Route path="/paypalProfilePage" element={<PaypalProfilePage/>}/>
+      <Route path="/uPIProfilePage" element={<UPIProfilePage/>}/>
+      
+      <Route path="/scanPayProfilePage" element={<ScanPayProfilePage/>}/>
+      <Route path="/billingDetailsPageannually" element={<BillingDetailsPageannually/>}/>
+      <Route path="/myReferalPage" element={<MyReferalPage/>}/>
+      <Route path="/referMoreProfilePages" element={<ReferMoreProfilePages/>}/>
+      <Route path="/earningCalculatorProfilePage" element={<EarningCalculatorProfilePage/>}/>
+      <Route path="/reffeerralProfilePageSSS" element={<ReffeerralProfilePageSSS/>}/>
+      <Route path="/fAQS" element={<FAQS/>}/>
+  
+     
+      <Route path="/sessionHistory" element={<SessionHistory/>}/>
+      <Route path="/accountSettings" element={<AccountSettings/>}/>
+      <Route path="/orderTable" element={<OrderTable/>}/>
+      <Route path="/managealert" element={<Managealert/>}/>
+    
+      <Route path="/contactFormmanagealert" element={<ContactFormmanagealert/>}/>
+      <Route path="/editProfile" element={<EditProfile/>} /> 
+      <Route path="/userDetailsupdate" element={<UserDetailsupdate/>} />
+      <Route path="/riskAnalysisDashboard" element={<RiskAnalysisDashboard/>}/>
+      <Route path="/halfyearlySubscriptionPages" element={<HalfyearlySubscriptionPages/>}/>
+      <Route path="/halfyearlyPaypalProfilePage" element={< HalfyearlyPaypalProfilePage/>}/>
+      <Route path="/halfyearlyUPIPage" element={<HalfyearlyUPIPage/>}/>
+      <Route path="/halfyearlyScanPage" element={<HalfyearlyScanPage/>}/>
+      <Route path="/premiumSubscriptionPages" element={<PremiumSubscriptionPages/>}/>
+      <Route path="/premiumPaypalProfilePage" element={<PremiumPaypalProfilePage/>}/>
+      <Route path="/premiumUPIPage" element={< PremiumUPIPage/>}/>
+      <Route path="/premiumScanPage" element={<PremiumScanPage/>}/>
+      <Route path="/annuallySubscriptionPages" element={< AnnuallySubscriptionPages/>}/>
+      <Route path="/annuallyPaypalProfilePage" element={<AnnuallyPaypalProfilePage/>}/>
+      <Route path="/annuallyUPIPage" element={<AnnuallyUPIPage/>}/>
+      <Route path="/annuallyScanPage" element={<AnnuallyScanPage/>}/>
+      <Route path="/annuallyPremiumSubscriptionPages" element={< AnnuallyPremiumSubscriptionPages/>}/>
+      <Route path="/annuallyPremiumPaypalProfilePage" element={<AnnuallyPremiumPaypalProfilePage/>}/>
+      <Route path="/annuallyPremiumUPIPage" element={<AnnuallyPremiumUPIPage/>}/>
+      <Route path="/annuallyPremiumScanPage" element={<AnnuallyPremiumScanPage/>}/>
+      <Route path="/sipCalculatorAccountPages" element={<Accountsipallpage/>}/>
+      <Route path="/stocksSmartSIPPS" element={<SmartSIPPS/>}/>
+      <Route path="/riskAnalysisDashboard" element={<RiskAnalysisDashboard/>}/>
+      <Route path="/profileRiskReportInvestment" element={<ProfileRiskReportInvestment/>}/>
+      <Route path="/profileScreenRiskReport" element={<ProfileScreenRiskReport/>}/>
+     
+     
+      
+     
+     
+      
+      
+     
+     
+
+
+
+    
+    
+     
+
+
+
+
+
+
+      
+    </Routes>
+   
+  );
+}
+
+export default App;
